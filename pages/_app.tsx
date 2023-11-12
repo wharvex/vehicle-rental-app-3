@@ -1,6 +1,21 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Fragment } from "react";
+import Head from "next/head";
+import type { AppProps } from "next/app";
+import "./global.css";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <Fragment>
+      <Head>
+        <title>vehicle-rental-app-3</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <Component {...pageProps} />
+    </Fragment>
+  );
 }
+
+export default MyApp;
